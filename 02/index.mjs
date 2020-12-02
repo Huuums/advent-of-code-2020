@@ -36,10 +36,8 @@ const part2 = () => {
     const secondPosition = position2 - 1;
 
     return (
-      (password.charAt(firstPosition) === char &&
-        password.charAt(secondPosition) !== char) ||
-      (password.charAt(firstPosition) !== char &&
-        password.charAt(secondPosition) === char)
+      (password.charAt(firstPosition) === char) ^
+      (password.charAt(secondPosition) === char)
     );
   });
   return validPasswords.length;
