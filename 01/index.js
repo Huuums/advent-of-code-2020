@@ -1,12 +1,9 @@
-import { readFilecontentsToArray } from "../utils/fileReader.mjs";
-import { dirname, resolve } from "path";
-import { fileURLToPath } from "url";
+import {
+  getAbsoluteFilePath,
+  readFilecontentsToArray,
+} from '../utils/fileReader.js';
 
-const inputPath = resolve(
-  dirname(fileURLToPath(import.meta.url)),
-  "./",
-  "input.txt"
-);
+const inputPath = getAbsoluteFilePath(import.meta.url, './', 'input.txt');
 
 const add = (...numbers) => {
   return numbers.reduce((acc, val) => acc + val);

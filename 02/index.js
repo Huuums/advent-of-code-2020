@@ -1,18 +1,16 @@
-import { readFilecontentsToArray } from "../utils/fileReader.mjs";
-import { dirname, resolve } from "path";
-import { fileURLToPath } from "url";
+import {
+  getAbsoluteFilePath,
+  readFilecontentsToArray,
+} from '../utils/fileReader.js';
 
-const inputPath = resolve(
-  dirname(fileURLToPath(import.meta.url)),
-  "./",
-  "input.txt"
-);
+/* eslint-disable-next-line */
+const inputPath = getAbsoluteFilePath(import.meta.url, './', 'input.txt');
 
 const input = readFilecontentsToArray(inputPath);
 
 const getPolicyParts = (policy) => {
-  const [minAndMax, charwithColon, password] = policy.split(" ");
-  const [min, max] = minAndMax.split("-");
+  const [minAndMax, charwithColon, password] = policy.split(' ');
+  const [min, max] = minAndMax.split('-');
 
   return { min, max, char: charwithColon.charAt(0), password };
 };
