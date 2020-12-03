@@ -2,7 +2,7 @@ import {
   getAbsoluteFilePath,
   readFilecontentsToArray,
 } from '../utils/fileReader.js';
-import { multiply } from '../utils/math.js';
+import { product } from '../utils/math.js';
 
 /* eslint-disable-next-line */
 const inputPath = getAbsoluteFilePath(import.meta.url, './', 'input.txt');
@@ -20,7 +20,7 @@ const getEncounteredTrees = (right, down = 1) => {
 
 const part1 = () => getEncounteredTrees(3, 1);
 const part2 = () =>
-  multiply(
+  product(
     getEncounteredTrees(1, 1),
     getEncounteredTrees(3, 1),
     getEncounteredTrees(5, 1),

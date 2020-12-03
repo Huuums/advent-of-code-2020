@@ -2,7 +2,7 @@ import {
   getAbsoluteFilePath,
   readFilecontentsToArray,
 } from '../utils/fileReader.js';
-import { sum, multiply } from '../utils/math.js';
+import { sum, product } from '../utils/math.js';
 
 const inputPath = getAbsoluteFilePath(import.meta.url, './', 'input.txt');
 
@@ -15,7 +15,7 @@ const part1 = () =>
     if (acc !== 0) return acc;
     const matchingNum = input.find((row) => sum(val, row) === 2020);
     if (matchingNum) {
-      return multiply(val, matchingNum);
+      return product(val, matchingNum);
     }
     return acc;
   }, 0);
@@ -27,7 +27,7 @@ const part2 = () =>
       input.some((inner) => sum(val, filterRow, inner) === 2020)
     );
     if (matchingNums.length) {
-      return multiply(val, ...matchingNums);
+      return product(val, ...matchingNums);
     }
     return acc;
   }, 0);
