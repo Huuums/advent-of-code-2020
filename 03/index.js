@@ -4,7 +4,6 @@ import {
 } from '../utils/fileReader.js';
 import { product } from '../utils/math.js';
 
-/* eslint-disable-next-line */
 const inputPath = getAbsoluteFilePath(import.meta.url, './', 'input.txt');
 
 const input = readFilecontentsToArray(inputPath).map((row) => row.split(''));

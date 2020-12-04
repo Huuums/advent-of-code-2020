@@ -3,7 +3,6 @@ import {
   readFilecontentsToArray,
 } from '../utils/fileReader.js';
 
-/* eslint-disable-next-line */
 const inputPath = getAbsoluteFilePath(import.meta.url, './', 'input.txt');
 
 const input = readFilecontentsToArray(inputPath);
